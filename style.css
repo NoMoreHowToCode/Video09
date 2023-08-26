@@ -1,0 +1,242 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+    min-height: 100vh;
+    background-color: #27272c;
+    position: relative;
+}
+
+h1{
+    font-size: 4rem;
+    color: #fff;
+    -webkit-text-stroke: 1.5px black;
+    /* margin-bottom: 50px; */
+}
+
+h1::before{
+    content: "Neon Button Hover";
+    color: #ff1818;
+    position: absolute;
+    transform: translate(0.3%, 3%);
+    z-index: -1;
+    -webkit-text-stroke: 0px;
+    text-shadow: 0 0 9px;
+}
+
+h1::after{
+    content: "Effect";
+    color: #0066ff;
+    position: absolute;
+    transform: translate(-99%, 3%);
+    z-index: -1;
+    -webkit-text-stroke: 0px;
+    text-shadow: 0 0 9px;
+}
+
+.btnsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6rem 18rem;
+    width: 1200px;
+    height: 400px;
+    /* background-color: aqua; */
+}
+
+.btn{
+    position: relative;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    background: transparent;
+    border: 3px solid #111;
+    border-radius: 10px;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    text-shadow: 0 0 3px;
+    transition: border 1s,
+                color 0.5s,
+                background-color 0.5s 0.2s,
+                box-shadow 0.5s 0.3s;
+}
+
+/* last */
+button.btn:hover{
+    border: 3px solid transparent;
+    color: #fff;
+}
+
+.btn:nth-child(1){color: #00ff00;}
+
+.btn:nth-child(2){color: #ff8800;}
+
+.btn:nth-child(3){color: #ff1818;}
+
+.btn:nth-child(4){color: #0066ff;}
+
+.btn:nth-child(1):hover{
+    background-color: #00ff00;
+    box-shadow: 0 0 18px #00ff00;
+}
+
+.btn:nth-child(2):hover{
+    background-color: #ffae00;
+    box-shadow: 0 0 18px #ffae00;
+}
+
+.btn:nth-child(3):hover{
+    background-color: #ff1818;
+    box-shadow: 0 0 18px #ff1818;
+}
+
+.btn:nth-child(4):hover{
+    background-color: #0066ff;
+    box-shadow: 0 0 18px #0066ff;
+}
+
+.btn::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    /* background-color: #00ff00; Temporarily */
+    position: absolute;
+    left: 50%;
+    top: -80%;
+    transform: translate(-50%, 0%);
+    transition: top 1s, opacity 0.2s 0.3s;
+}
+
+.btn::after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    /* background-color: #00ff00; Temporarily */
+    position: absolute;
+    left: 50%;
+    bottom: -80%;
+    transform: translate(-50%, 0%);
+    transition: bottom 1s, opacity 0.2s 0.3s;
+}
+
+.btn span::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    /* background-color: #00ff00; Temporarily */
+    position: absolute;
+    left: -30%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    transition: left 1s, opacity 0.2s 0.3s;
+}
+
+.btn span::after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    /* background-color: #00ff00; Temporarily */
+    position: absolute;
+    right: -30%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    transition: right 1s, opacity 0.2s 0.3s;
+}
+
+.btn:nth-child(1)::before, .btn:nth-child(1) span::before{
+    background-color: #00ff00;
+    border-radius: 2px;
+}
+
+.btn:nth-child(1)::after, .btn:nth-child(1) span::after{
+    background-color: #00ff00;
+    border-radius: 2px;
+}
+
+.btn:nth-child(2)::before, .btn:nth-child(2) span::before{
+    background-color: #ffae00;
+    border-radius: 50px;
+}
+
+.btn:nth-child(2)::after, .btn:nth-child(2) span::after{
+    background-color: #ffae00;
+    border-radius: 50px;
+}
+
+.btn:nth-child(3)::before{
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 24px solid #ff1818;
+}
+
+.btn:nth-child(3)::after{
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 24px solid #ff1818;
+}
+
+.btn:nth-child(3) span::before{
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 24px solid #ff1818;
+}
+
+.btn:nth-child(3) span::after{
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 24px solid #ff1818;
+}
+
+.btn:nth-child(4)::before, .btn:nth-child(4)::after{
+    background-color: #0066ff;
+    border-radius: 2px;
+    width: 10px;
+    height: 25px;
+}
+
+.btn:nth-child(4) span::before, .btn:nth-child(4) span::after{
+    background-color: #0066ff;
+    border-radius: 2px;
+    width: 25px;
+    height: 10px;
+}
+
+.btn:hover::before{
+    top: 30%;
+    opacity: 0;
+}
+
+.btn:hover::after{
+    bottom: 30%;
+    opacity: 0;
+}
+
+.btn:hover span::before{
+    left: 45%;
+    opacity: 0;
+}
+
+.btn:hover span::after{
+    right: 45%;
+    opacity: 0;
+}
